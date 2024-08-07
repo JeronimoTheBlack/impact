@@ -37,10 +37,10 @@ code: |
   // this component does not need to reconcile, but if the
   // observed item changes it will reconcile
   const Item = memo(({ id }) => {
-    using itemsStore = useStore(ItemStore)
+    using itemsStore = useStore(ItemsStore)
 
     // We consume the specific item directly from the store
-    const item = app.getItemById(id)
+    const item = itemsStore.getItemById(id)
 
     return (
       <li>
